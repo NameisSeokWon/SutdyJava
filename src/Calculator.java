@@ -19,9 +19,7 @@ public class Calculator {
                     int num2 = Exception(numbers[2], "2번째 인수");
                     char math2 = numbers[3].charAt(0);
                     int num3 = Exception(numbers[4], "3번째 인수");
-
                     int result = calculate(num1, math1, num2, math2, num3);
-
                     System.out.println("계산 결과: " + result);
                     checkInput = true; 
                 } catch (NumberFormatException e) {
@@ -39,16 +37,14 @@ public class Calculator {
             }
         }
         sc.close();
-    }
-    
+    }    
     public static int Exception(String str, String position) {
         try {
             return Integer.parseInt(str);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException(position + "는 숫자로 입력해주세요.");
         }
-    }
-    
+    }    
     public static int calculate(int num1, char cal1, int num2, char cal2, int num3) {
         int result = 0;       
         switch (cal1) {
@@ -71,8 +67,6 @@ public class Calculator {
             default:
                 throw new IllegalArgumentException("잘못된 연산자입니다. +, -, *, / 중 하나를 입력하세요.");
         }
-        
-        // 두 번째 연산 수행
         switch (cal2) {
             case '+':
                 result += num3;
@@ -93,7 +87,6 @@ public class Calculator {
             default:
                 throw new IllegalArgumentException("잘못된 연산자입니다. +, -, *, / 중 하나를 입력하세요.");
         }
-
         return result;
     }
 }
